@@ -16,6 +16,10 @@ body {
   align-self: center;
 }
 
+textarea {
+  resize: vertical;
+}
+
 hr {
   margin: 2rem 10% 1rem 10%;
 }
@@ -285,3 +289,4 @@ button.consensus:hover,
       "contact";
   }
 }
+
