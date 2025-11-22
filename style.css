@@ -1,0 +1,287 @@
+/* ====== Umum ====== */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background: #f5f5f5;
+  margin: 0px;
+  padding: 0px;
+}
+
+.center {
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+hr {
+  margin: 2rem 10% 1rem 10%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 2em;
+  grid-template-areas:
+    "image about about about"
+    "image skill skill skill"
+    "history history maps maps"
+    "contact contact maps maps";
+}
+
+.grid-box {
+  /* border-radius: 5px; */
+  font-size: 1.2rem;
+  overflow: hidden;
+  align-content: center;
+  justify-content: center;
+}
+
+.boxed, .blockchain-block, .chain-block, .wallet {
+  border-style: solid;
+  border-color: #202020;
+  border-width: 2px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 0px 0px #202020;
+  transition-duration: 200ms;
+}
+.boxed:hover, .blockchain-block:hover, .chain-block:hover, .wallet:hover {
+  box-shadow: 4px 5px 0px 0px #202020;
+  transition-duration: 200ms;
+}
+
+.contact-container {
+  padding: 1em;
+  margin: 1em;
+  background-color: #fdcaaf;
+}
+
+.center-text {
+  text-align: left;
+  padding: 0px 20% 0px 20%;
+}
+
+/* ====== Navbar ====== */
+.navbar {
+  display: flex;
+  background: #dd6920;
+  padding: 0px 10px 0px 10px;
+}
+
+.navbar button {
+  flex: 1;
+  padding: 15px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 12px 12px 0px 0px;
+  margin-top: 10px;
+  transition-duration: 200ms;
+}
+
+.navbar button:hover {
+  background: #bb5015;
+  transition-duration: 200ms;
+}
+
+.navbar button.active {
+  background: #f5f5f5;
+  color: black;
+  /* font-weight: 700; */
+  flex: 1.2;
+  margin-top: 5px;
+  transition-duration: 500ms;
+}
+
+/* ====== Halaman / Tab ====== */
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  margin: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ====== Elemen Form ====== */
+.contact-form label {
+  font-weight: 400;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+textarea,
+input,
+.output {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.output {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  min-height: 1.5em;
+  word-break: break-all;
+  background: #fafafa;
+}
+
+/* Tombol umum */
+button.mine,
+#btn-add-block {
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: #bb5015;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button.mine:hover,
+#btn-add-block:hover {
+  background: #cc5e24;
+}
+
+/* ====== Blockchain (blok berjajar) ====== */
+.blockchain-container {
+  white-space: nowrap; /* supaya horizontal */
+  overflow-x: auto; /* scroll horizontal */
+  padding-bottom: 10px;
+}
+
+.blockchain-block {
+  display: inline-block; /* horizontal */
+  vertical-align: top;
+  min-width: 250px;
+  max-width: 250px;
+  padding: 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: #fdcaaf; /* hijau terang */
+  box-sizing: border-box;
+}
+
+.blockchain-block input,
+.blockchain-block textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.blockchain-block .hash-output {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+  word-break: break-all;
+  background: #fafafa;
+}
+
+.wallets {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.wallet {
+  padding: 10px;
+  flex: 1;
+  background-color: #fdcaaf; /* oranye terang */
+}
+.chain-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.chain-block {
+  padding: 5px;
+  width: 200px;
+  background: #fdcaaf;
+  font-size: 0.8em;
+}
+.chain-block.invalid {
+  background: pink;
+}
+
+/* Tombol "Mine semua transaksi" → biru muda */
+button.mine,
+#btn-mine-all {
+  background-color: #bb5015; /* biru muda lembut */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.mine:hover,
+#btn-mine-all:hover {
+  background-color: #cc5e24;
+}
+
+/* Tombol "Verify" → pink cerah */
+button.verify,
+#btn-verify-consensus {
+  background-color: #df3910; /* pink cerah */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.verify:hover,
+#btn-verify-consensus:hover {
+  background-color: #ed532d;
+}
+
+/* Tombol "Consensus" → biru muda */
+button.consensus,
+#btn-consensus {
+  background-color: #e09a17; /* biru muda lembut */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button.consensus:hover,
+#btn-consensus:hover {
+  background-color: rgb(220, 117, 62);
+}
+
+/* phone */
+@media (max-width: 56em) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 700px auto; */
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "image"
+      "about"
+      "skill"
+      "history"
+      "maps"
+      "contact";
+  }
+}
